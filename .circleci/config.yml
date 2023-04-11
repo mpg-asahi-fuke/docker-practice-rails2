@@ -1,14 +1,14 @@
 version: 2.1
 jobs:
-  absz:
+  rspec:
     docker:
       - image: cimg/base:stable
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "rspec"
+          command: "bundle exec rspec"
 workflows:
-  say-hello-workflow:
+  build_and_analyze:
     jobs:
-      - absz
+      - rspec
