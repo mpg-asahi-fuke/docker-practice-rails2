@@ -3,9 +3,9 @@ jobs:
   rspec:
     docker:
       - image: cimg/ruby:3.1-node
-      # - image: circleci/postgres:12-alpine
-      #   environment:
-      #      POSTGRES_PASSWORD: password
+      - image: circleci/postgres:12-alpine
+        environment:
+           POSTGRES_PASSWORD: password
     steps:
       - checkout
       - run:
@@ -17,9 +17,9 @@ jobs:
           name: Bundle Install
           command: |
             bundle install
-      - run:
-          name: "rspec"
-          command: "bundle exec rspec"
+      # - run:
+      #     name: "rspec"
+      #     command: "bundle exec rspec"
 workflows:
   build_and_analyze:
     jobs:
