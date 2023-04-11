@@ -11,6 +11,10 @@ jobs:
             sudo apt update
             sudo apt install bundler
       - run:
+          name: Bundle Install
+          command: |
+            bundle install
+      - run:
           name: "rspec"
           command: "bundle exec rspec"
 workflows:
