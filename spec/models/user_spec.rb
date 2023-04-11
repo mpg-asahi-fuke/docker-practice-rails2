@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe do
-  it "ok" do
-    expect(1+1).to eq 3
-  end
+RSpec.describe User, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
