@@ -17,6 +17,8 @@ jobs:
           name: Bundle Install
           command: |
             bundle install
+  rspec2:
+    steps:
       - run:
           name: "rspec"
           command: "bundle exec rspec"
@@ -24,3 +26,6 @@ workflows:
   build_and_analyze:
     jobs:
       - rspec
+      - rspec2:
+        requires:
+              - rspec
