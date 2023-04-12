@@ -24,7 +24,7 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: "環境変数の確認"
-          command: psql -h localhost -p 5432 -U postgres -d myapp_test
+          command: psql -h localhost -p 5432 -U postgres 
       - run:
           name: DBをセットアップ
           command: bin/rails db:schema:load --trace
