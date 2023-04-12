@@ -4,8 +4,8 @@ jobs:
     docker:
       - image: cimg/ruby:3.1-node
       - image: circleci/postgres:12-alpine
-        environment:
-          POSTGRES_DB: myapp_test
+        # environment:
+        #   POSTGRES_DB: myapp_test
     steps:
       - checkout
       - run:
