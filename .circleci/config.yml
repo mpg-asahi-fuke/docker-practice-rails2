@@ -7,7 +7,10 @@ jobs:
           DB_HOST: localhost
       - image: circleci/postgres:12-alpine
         environment:
-           POSTGRES_PASSWORD: password
+          POSTGRES_HOST: localhost
+          POSTGRES_USER: postgres
+          POSTGRES_DB: myapp_test
+          POSTGRES_PASSWORD: password
     steps:
       - checkout
       - run:
@@ -24,7 +27,7 @@ jobs:
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: "環境変数の確認"
-          command: psql -h localhost -p 5432 -U postgres 
+          command: psql -h localhost -p 5432 -U postgres -d myapp_test
       - run:
           name: DBをセットアップ
           command: bin/rails db:schema:load --trace
