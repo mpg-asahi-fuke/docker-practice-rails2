@@ -23,6 +23,9 @@ jobs:
           name: DBの起動まで待機
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
+          name: "環境変数の確認"
+          command: printenv | grep DB_
+      - run:
           name: DBをセットアップ
           command: bin/rails db:schema:load --trace
       # - run:
