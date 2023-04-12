@@ -6,10 +6,8 @@ jobs:
         environment:
           DB_HOST: localhost
       - image: circleci/postgres:12-alpine
-        # environment:
-          # POSTGRES_USER: postgres
-          # POSTGRES_DB: myapp_test
-          # POSTGRES_PASSWORD: password
+        environment:
+          POSTGRES_DB: myapp_test
     steps:
       - checkout
       - run:
