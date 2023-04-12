@@ -6,7 +6,7 @@ jobs:
       - image: circleci/postgres:12-alpine
         environment:
           POSTGRES_DB: myapp_test
-          POSTGRES_host: db
+          POSTGRES_HOST: db
     steps:
       - checkout
       - run:
