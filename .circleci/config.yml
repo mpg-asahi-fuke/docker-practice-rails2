@@ -29,9 +29,6 @@ jobs:
       #     name: "環境変数の確認"
       #     command: psql -h localhost -p 5432 -U postgres -d myapp_test
       - run:
-          name: DBをセットアップ
-          command: bin/rails db:schema:load --trace
-      - run:
           name: "rspec"
           command: "bundle exec rspec"
 workflows:
