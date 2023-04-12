@@ -3,9 +3,11 @@ jobs:
   rspec:
     docker:
       - image: cimg/ruby:3.1-node
+        environment:
+          host: localhost 
       - image: circleci/postgres:12-alpine
-        # environment:
-        #   POSTGRES_DB: myapp_test
+        environment:
+          POSTGRES_DB: myapp_test
     steps:
       - checkout
       - run:
