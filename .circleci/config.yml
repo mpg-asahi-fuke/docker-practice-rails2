@@ -4,10 +4,10 @@ jobs:
     docker:
       - image: cimg/ruby:3.1-node
         environment:
-          DB_HOST: 127.0.0.1
-      # - image: circleci/postgres:12-alpine
-      #   environment:
-      #      POSTGRES_PASSWORD: password
+          DB_HOST: DB
+      - image: circleci/postgres:12-alpine
+        environment:
+           POSTGRES_PASSWORD: password
     steps:
       - checkout
       - run:
